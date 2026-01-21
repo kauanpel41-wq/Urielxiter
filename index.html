@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Xiter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #00ff88; /* Verde Neon Gamer */
+            --bg-color: #0a0a0a;
+            --card-bg: rgba(20, 20, 20, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            /* Fundo com efeito de vinheta e luz */
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+        }
+
+        /* Elementos Decorativos de Fundo */
+        .glow-bg {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--main-color);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Card do Produto Principal */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        /* Estilo da Imagem Centralizada */
+        .product-img-wrapper {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 30px;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px var(--main-color));
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Textos */
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--main-color);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--main-color);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        p.description {
+            color: #aaa;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Área de Preço */
+        .price-container {
+            margin-bottom: 35px;
+        }
+
+        .old-price {
+            display: block;
+            font-size: 1rem;
+            color: #555;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .new-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+        }
+
+        /* Botão de Checkout Estilo Gamer */
+        .btn-checkout {
+            display: inline-block;
+            width: 100%;
+            background: var(--main-color);
+            color: #000;
+            text-decoration: none;
+            padding: 22px;
+            border-radius: 15px;
+            font-weight: 900;
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-checkout:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 255, 136, 0.6);
+            letter-spacing: 4px;
+        }
+
+        /* Footer de confiança */
+        .trust-badges {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+
+        .badge-item { display: flex; align-items: center; gap: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            
+            <span class="tag">Atualizado & Indetectável</span>
+            
+            <div class="product-img-wrapper">
+                <img src="https://files.catbox.moe/ykmm8j.png" alt="Script Master">
+            </div>
+
+            <h1>URIEL XITER V1</h1>
+            
+            <p class="description">
+            </p>
+
+            <div class="price-container">
+                <span class="old-price">DE R$ 67,90 POR APENAS</span>
+                <span class="new-price">R$ 10,00</span>
+            </div>
+
+            <a href="https://go.allpes.com.br/dm4wsfyxdk" class="btn-checkout">Comprar Acesso</a>
+
+            <div class="trust-badges">
+                <div class="badge-item">🛡️ Secure</div>
+                <div class="badge-item">⚡ Instant Delivery</div>
+                <div class="badge-item">💬 Support 24/7</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
