@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Key Única</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        /* Card Central */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Botão */
+        .btn-gerar {
+            background: #00d2ff;
+            background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+            background: linear-gradient(to right, #3a7bd5, #00d2ff);
+            border: none;
+            padding: 12px 30px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        .btn-gerar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.5);
+        }
+
+        .btn-gerar:active {
+            transform: translateY(0);
+        }
+
+        /* Área da Key */
+        #resultado {
+            margin-top: 25px;
+            display: none; /* Escondido inicialmente */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .key-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            border: 1px dashed #00d2ff;
+            margin-bottom: 15px;
+        }
+
+        .aviso {
+            font-size: 0.85rem;
+            color: #ffda79;
+            font-style: italic;
+        }
+
+        /* Animação de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Acesso ao Sistema</h2>
+        <p>Clique abaixo para resgatar sua chave de acesso.</p>
+        
+        <button class="btn-gerar" onclick="gerarKey()">GERAR MINHA KEY</button>
+
+        <div id="resultado">
+            <div class="key-box">key4852</div>
+            <p class="aviso">⚠️ Atenção: Esta chave é única e vinculada ao seu perfil. Não é possível alterá-la após a geração.</p>
+        </div>
+    </div>
+
+    <script>
+        function gerarKey() {
+            // Mostra a div de resultado
+            document.getElementById('resultado').style.display = 'block';
+            
+            // Opcional: Desabilitar o botão após o clique para reforçar que é única
+            const botao = document.querySelector('.btn-gerar');
+            botao.innerText = "KEY GERADA";
+            botao.style.opacity = "0.5";
+            botao.style.cursor = "not-allowed";
+            botao.onclick = null;
+        }
+    </script>
+
+</body>
+</html>
